@@ -12,6 +12,7 @@ public class MedecinDao implements IMedecinDao {
 
 	// ConnectionDao conn = new ConnectionDao();
 
+	@Override
 	public boolean connect(String login, String password) {
 		// TODO Auto-generated method stub
 		Statement stm = null;
@@ -19,9 +20,8 @@ public class MedecinDao implements IMedecinDao {
 		stm = ConnectionDao.getConnection();
 
 		try {
-			String sql = "SELECT * from `medecin` where `login`=" + login + "and `password`=" + password + ";";
+			String sql = "SELECT * from `medecin` where `login`= '" + login + "' or `password`='" + password + "';";
 			rs = stm.execute(sql);
-
 			return rs;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -30,6 +30,7 @@ public class MedecinDao implements IMedecinDao {
 		return rs;
 	}
 
+	@Override
 	public List<Patient> getAllPatients() {
 		// TODO Auto-generated method stub
 		Statement stm = null;
@@ -62,6 +63,7 @@ public class MedecinDao implements IMedecinDao {
 		return null;
 	}
 
+	@Override
 	public Patient readPatientByID(int index) {
 		// TODO Auto-generated method stub
 

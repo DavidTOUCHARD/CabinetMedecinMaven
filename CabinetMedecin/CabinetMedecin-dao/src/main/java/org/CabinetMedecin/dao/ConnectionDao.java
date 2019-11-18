@@ -26,9 +26,9 @@ public class ConnectionDao {
 			Class.forName("com.mysql.jdbc.Driver");
 			try {
 				ConnectionDao.connect = DriverManager
-						.getConnection("jdbc:mysql://localhost/cabinet?user=root&password=");
+						.getConnection("jdbc:mysql://localhost/cabinetmedecin?user=root&password=");
 				ConnectionDao.statement = ConnectionDao.connect.createStatement();
-
+				System.out.println("connecté");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				System.out.println("Erreur 1" + e);
