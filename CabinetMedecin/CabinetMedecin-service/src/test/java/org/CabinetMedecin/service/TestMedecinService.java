@@ -1,7 +1,7 @@
 package org.CabinetMedecin.service;
 
 import org.CabinetMedecin.dao.IMedecinDao;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.mockito.Mockito;
 
 import junit.framework.TestCase;
